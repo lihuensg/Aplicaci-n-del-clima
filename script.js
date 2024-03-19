@@ -37,6 +37,8 @@ let difKelvin = 273.15
         const ciudadNombre = data.name
         const temperatura = data.main.temp
         const descripcion = data.weather[0].description
+        const latitud = data.coord.lat
+        const longitud = data.coord.lon
 
         const ciudadTitulo = document.createElement('h2')
         ciudadTitulo.textContent = ciudadNombre
@@ -48,7 +50,19 @@ let difKelvin = 273.15
         const descripcionInfo = document.createElement('p')
         descripcionInfo.textContent = `La descripción metereologica es: ${descripcion}`
 
+        const latitudInfo = document.createElement('p')
+        latitudInfo.textContent = `La latitud es: ${latitud}`
+        
+        const longitudInfo = document.createElement('p')
+        longitudInfo.textContent = `La longitud es: ${longitud}`
+
         divDatodsClimas.appendChild(ciudadTitulo)
         divDatodsClimas.appendChild(temperaturaInfo)
         divDatodsClimas.appendChild(descripcionInfo)   
+        divDatodsClimas.appendChild(latitudInfo)  
+        divDatodsClimas.appendChild(longitudInfo)  
+    }
+
+    function iniciarMap(){
+        var coordenadas = {}
     }
