@@ -1,0 +1,134 @@
+body {
+    margin-left: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0a0909;
+    width: 100%;
+    height: 100%;
+    background-color: #111111;
+    background-image: linear-gradient(
+      32deg,
+      rgba(8, 8, 8, 0.74) 30px,
+      transparent
+    );
+    background-size: 60px 60px;
+    background-position: -5px -5px;
+  }
+  
+  
+  .contenedor {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: black; /* Fondo negro */
+    border: 2px solid white; /* Bordes sólidos blancos */
+    box-shadow: 0 0 10px white; /* Resplandor blanco alrededor del contenedor */
+  }
+  
+  h1 {
+    font-size: 1.5em; /* Tamaño de fuente grande */
+    font-family: 'Roboto', sans-serif; /* Fuente moderna */
+     color: #fff; /* Color del texto blanco */
+     text-align: center; /* Centrar el texto */
+     text-transform: uppercase; /* Convertir el texto a mayúsculas */
+     letter-spacing: 2px; /* Espaciado entre letras */
+     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7); /* Sombra del texto */
+     margin-bottom: 30px; /* Margen inferior */
+     padding: 15px; /* Relleno interno */
+     background: linear-gradient(to right,  rgb(90, 36, 73), rgb(0, 0, 0)); /* Fondo de degradado */
+     border-radius: 10px; /* Borde redondeado */
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 70%;
+    color: rgb(253, 253, 253);
+  }
+  
+  button {
+    width: 120px;
+    height: 52px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 1rem;
+    border: none;
+    position: relative;
+    background:  rgb(0, 0, 0);
+    transition: 0.1s;
+    box-shadow: 2px 2px 2px rgb(146, 145, 145),
+    inset 2px 2px 2px rgb(219, 219, 219),
+    -1px -1px 20px rgba(206, 206, 206, 0.781);
+  }
+  
+  
+  button:active {
+    transform: scale(0.9) rotate(3deg);
+    background: radial-gradient( circle farthest-corner at 10% 20%,  rgb(90, 36, 73) 17.8%, rgb(0, 0, 0) 100.2% );
+    transition: 0.5s;
+  }
+  
+  .input {
+    max-width: 190px;
+    height: 2rem;
+    background-color: transparent;
+    border: 2px solid transparent;
+    color: rgb(0, 0, 0);
+    padding: 1rem;
+    box-shadow: 2px 2px 2px rgb(146, 145, 145),
+      inset 2px 2px 2px rgb(219, 219, 219),
+      -1px -1px 20px rgba(206, 206, 206, 0.781);
+    outline: none;
+    border-radius: 10px;
+    font-size: medium;
+  }
+  
+  .input:focus {
+    box-shadow: 2px 2px 2px rgb(82, 80, 80),
+      inset 2px 2px 5px rgba(82, 80, 80, 0.562),
+      -1px -1px 5px rgba(170, 167, 167, 0.493),
+      inset -1px -1px 5px rgba(187, 185, 185, 0.822);
+  }
+
+  #datosClima {
+    margin-top: 20px;
+    font-size: 18px;
+    color: beige;
+  }
+
+  #datosClima p.temp {
+    margin-top: 20px;
+    font-size: 18px;
+    color: rgb(255, 254, 254);
+  }
+  
+  footer {
+    font-family: 'Roboto', sans-serif;
+    background: radial-gradient( circle farthest-corner at 10% 20%,  rgb(6, 0, 4) 17.8%, rgb(0, 0, 0) 100.2% );
+    color: #fff; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+    padding: 10px; /* Espacio interno alrededor del texto */
+    position: fixed; /* Fija el pie de página en la parte inferior de la ventana */
+    bottom: 0; /* Lo coloca en la parte inferior */
+    width: 100%; /* Ancho completo */
+}
+
+.footer-content {
+    display: flex; /* Utiliza flexbox para alinear los elementos uno al lado del otro */
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+.footer-content p {
+    margin: 0; /* Elimina el margen del párrafo para evitar espacios innecesarios */
+}
+
+.footer-content button {
+    margin-left: 30px; /* Agrega un margen a la izquierda del botón para separarlo del párrafo */
+    width: 50px; /* Ancho del botón */
+    height: 50px; /* Alto del botón */
+    display: flex; /* Utiliza flexbox para alinear el contenido vertical y horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+}
