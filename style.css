@@ -14,6 +14,13 @@ body {
     background-position: -5px -5px;
   }
   
+  @media (max-width: 768px) {
+    button {
+        position: static; /* Cambia la posición a estática para que no esté pegado */
+        margin-top: 10px; /* Añade un margen en la parte superior para separarlo */
+    }
+}
+
   .contenedor {
     position: relative;
     max-width: 500px;
@@ -58,7 +65,7 @@ body {
   }
   
   button {
-    width: 120px;
+    width: 110px;
     height: 52px;
     cursor: pointer;
     color: #fff;
