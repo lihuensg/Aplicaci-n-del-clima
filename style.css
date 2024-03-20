@@ -14,10 +14,26 @@ body {
     background-position: -5px -5px;
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 650px) {
     button {
         position: static; /* Cambia la posición a estática para que no esté pegado */
         margin-top: 10px; /* Añade un margen en la parte superior para separarlo */
+    }
+
+    .contenedor1{
+      max-width: 90%; /* Ancho máximo del 90% del tamaño de la pantalla */
+      max-height: 70vh; /* Altura máxima del 70% de la altura visible del navegador */
+      margin: 20px auto;
+      margin-top: 20px;
+      border: 2px solid white;
+      box-shadow: 0 0 10px white;
+      margin-bottom: 100px;
+      overflow: hidden; /* Para asegurarse de que el contenido no desborde */
+    }
+
+    .mapa {
+      width: 100%; /* Asegurarse de que el mapa ocupe todo el ancho del contenedor */
+      height: 100%; /* Asegurarse de que el mapa ocupe todo el alto del contenedor */
     }
 }
 
@@ -40,6 +56,7 @@ body {
    border: 2px solid white;
    box-shadow: 0 0 10px white; 
    margin-bottom: 100px;
+   overflow: hidden; /* Para asegurarse de que el contenido no desborde */
   }
   
   .mapa {
