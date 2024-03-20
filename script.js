@@ -11,6 +11,7 @@ L.tileLayer('https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=6PVzPW
   }
 ).addTo(map);
 
+
     document.getElementById('botonBusqueda').addEventListener('click' , () => {
         const ciudad = document.getElementById('ciudadEntrada').value
         if (ciudad) {
@@ -43,20 +44,30 @@ L.tileLayer('https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=6PVzPW
         divDatodsClimas.innerHTML=''
 
         const ciudadNombre = data.name
+        const paisNombre = data.sys.country
         const temperatura = data.main.temp
         const descripcion = data.weather[0].description
+        const humedad = data.main.humidity
         const latitud = data.coord.lat
         const longitud = data.coord.lon
+        const icono = data.weather[0].icon
 
         const ciudadTitulo = document.createElement('h2')
-        ciudadTitulo.textContent = ciudadNombre
+        ciudadTitulo.textContent = `${ciudadNombre},${paisNombre}`
 
         const temperaturaInfo = document.createElement('p')
         temperaturaInfo.classList.add('temp')
         temperaturaInfo.textContent = `La temperatura es: ${(temperatura - difKelvin).toFixed(1)}°C`
 
+        const humedadInfo = document.createElement('p')
+        humedadInfo.textContent = `La humedad es: ${humedad}%`
+
+        const iconoInfo = document.createElement('img')
+        iconoInfo.src=`https://openweathermap.org/img/wn/10d@2x.png`
+
         const descripcionInfo = document.createElement('p')
         descripcionInfo.textContent = `La descripción metereológica es: ${descripcion}`
+        
 
         //const latitudInfo = document.createElement('p')
         //latitudInfo.textContent = `La latitud es: ${latitud}`
@@ -66,7 +77,9 @@ L.tileLayer('https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=6PVzPW
 
         divDatodsClimas.appendChild(ciudadTitulo)
         divDatodsClimas.appendChild(temperaturaInfo)
-        divDatodsClimas.appendChild(descripcionInfo)   
+        divDatodsClimas.appendChild(humedadInfo) 
+        divDatodsClimas.appendChild(iconoInfo)  
+        divDatodsClimas.appendChild(descripcionInfo)
        // divDatodsClimas.appendChild(latitudInfo)  
        // divDatodsClimas.appendChild(longitudInfo)  
        
@@ -76,4 +89,3 @@ L.tileLayer('https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=6PVzPW
 
         marker = L.marker([latitud,longitud]).addTo(map)
     }
-
