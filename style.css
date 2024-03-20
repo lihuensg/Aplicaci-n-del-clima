@@ -34,6 +34,7 @@ body {
     .mapa {
       width: 100%; /* Asegurarse de que el mapa ocupe todo el ancho del contenedor */
       height: 100%; /* Asegurarse de que el mapa ocupe todo el alto del contenedor */
+      z-index: 0; /* Establece un índice z menor para el mapa */;
     }
 }
 
@@ -49,17 +50,19 @@ body {
   }
   
   .contenedor1 {
+    position: relative;
     max-width: 800px;
-   height: 600px;
-   margin: 20px auto;
-   margin-top: 20px;
-   border: 2px solid white;
-   box-shadow: 0 0 10px white; 
-   margin-bottom: 100px;
-   overflow: hidden; /* Para asegurarse de que el contenido no desborde */
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    border: 2px solid white;
+    box-shadow: 0 0 10px white; 
+    overflow: hidden; /* Para asegurarse de que el contenido no desborde */
   }
   
   .mapa {
+    z-index: 0; /* Establece un índice z menor para el mapa */;
     width: 100%; /* Asegurarse de que el mapa ocupe todo el ancho del contenedor */
     height: 100%; /* Asegurarse de que el mapa ocupe todo el alto del contenedor */
   }
@@ -145,6 +148,7 @@ body {
    
   
   footer {
+    position: fixed;
     font-family: 'Roboto', sans-serif;
     background: radial-gradient( circle farthest-corner at 10% 20%,  rgb(6, 0, 4) 17.8%, rgb(0, 0, 0) 100.2% );
     color: #fff; /* Color del texto */
