@@ -1,7 +1,15 @@
 let urlBase = 'https://api.openweathermap.org/data/2.5/weather'
 let api_key = 'debbcd90196a7d04d57e2e353a2ab31f';
 let difKelvin = 273.15
+let marker = null;
 
+let map = L.map('map').setView([0, 0], 1);
+L.tileLayer('https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=6PVzPWjO5UOgN3axK9l6',
+  {
+    attribution:
+      '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+  }
+).addTo(map);
 
     document.getElementById('botonBusqueda').addEventListener('click' , () => {
         const ciudad = document.getElementById('ciudadEntrada').value
@@ -48,21 +56,24 @@ let difKelvin = 273.15
         temperaturaInfo.textContent = `La temperatura es: ${(temperatura - difKelvin).toFixed(1)}°C`
 
         const descripcionInfo = document.createElement('p')
-        descripcionInfo.textContent = `La descripción metereologica es: ${descripcion}`
+        descripcionInfo.textContent = `La descripción metereológica es: ${descripcion}`
 
-        const latitudInfo = document.createElement('p')
-        latitudInfo.textContent = `La latitud es: ${latitud}`
+        //const latitudInfo = document.createElement('p')
+        //latitudInfo.textContent = `La latitud es: ${latitud}`
         
-        const longitudInfo = document.createElement('p')
-        longitudInfo.textContent = `La longitud es: ${longitud}`
+      //  const longitudInfo = document.createElement('p')
+      //  longitudInfo.textContent = `La longitud es: ${longitud}`
 
         divDatodsClimas.appendChild(ciudadTitulo)
         divDatodsClimas.appendChild(temperaturaInfo)
         divDatodsClimas.appendChild(descripcionInfo)   
-        divDatodsClimas.appendChild(latitudInfo)  
-        divDatodsClimas.appendChild(longitudInfo)  
+       // divDatodsClimas.appendChild(latitudInfo)  
+       // divDatodsClimas.appendChild(longitudInfo)  
+       
+        if (marker) {
+            map.removeLayer(marker);
+        }
+
+        marker = L.marker([latitud,longitud]).addTo(map)
     }
 
-    function iniciarMap(){
-        var coordenadas = {}
-    }
