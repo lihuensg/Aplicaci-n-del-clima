@@ -32,14 +32,19 @@ body {
     box-shadow: 0 0 10px white; /* Resplandor blanco alrededor del contenedor */
   }
   
-  .mapa {
-   max-width: 800px;
+  .contenedor1 {
+    max-width: 800px;
    height: 600px;
    margin: 20px auto;
    margin-top: 20px;
    border: 2px solid white;
    box-shadow: 0 0 10px white; 
    margin-bottom: 100px;
+  }
+  
+  .mapa {
+    width: 100%; /* Asegurarse de que el mapa ocupe todo el ancho del contenedor */
+    height: 100%; /* Asegurarse de que el mapa ocupe todo el alto del contenedor */
   }
 
 
