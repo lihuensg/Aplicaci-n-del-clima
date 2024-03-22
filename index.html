@@ -22,20 +22,21 @@
   <body>
     <div class="contenedor">
       <h1>Aplicación de Clima</h1>
-      <input
-        class="input"
-        type="text"
-        id="ciudadEntrada"
-        placeholder="Ingrese una ciudad"
-      />
-      <button id="botonBusqueda">Buscar</button>
-      <div id="datosClima"></div>
-  </div>
-    
-  <div class=" contenedor1">
-  <div class="mapa" id="map" ></div>
-  </div>
-  
+
+        <input
+          class="input"
+          type="text"
+          id="ciudadEntrada"
+          placeholder="Ingrese una ciudad"/>
+       <!-- <button id="botonBusqueda">Buscar</button>-->
+        <div id="loading" style="display: none;">Cargando...</div>
+        <div id="datosClima"></div>
+    </div>
+
+    <div class="contenedor1">
+      <div class="mapa" id="map"></div>
+    </div>
+
     <footer>
       <div class="footer-content">
         <p>Lihuén Segovia Grabois</p>

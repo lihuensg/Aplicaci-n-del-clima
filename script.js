@@ -12,12 +12,19 @@ L.tileLayer('https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=6PVzPW
 ).addTo(map);
 
 
-    document.getElementById('botonBusqueda').addEventListener('click' , () => {
+  /*  document.getElementById('botonBusqueda').addEventListener('click' , () => {
         const ciudad = document.getElementById('ciudadEntrada').value
         if (ciudad) {
           fetchDatosClima(ciudad)
         }
-    })
+    })*/
+
+    document.getElementById('ciudadEntrada').addEventListener('input', () => {
+      const ciudad = document.getElementById('ciudadEntrada').value.trim();
+      if (ciudad) {
+          fetchDatosClima(ciudad);
+      }
+  });
 
     function fetchDatosClima(ciudad) {
         fetch(`${urlBase}?q=${ciudad}&appid=${api_key}&lang=es`)
@@ -50,7 +57,7 @@ L.tileLayer('https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=6PVzPW
         const humedad = data.main.humidity
         const latitud = data.coord.lat
         const longitud = data.coord.lon
-        const icono = data.weather[0].icon
+        //const icono = data.weather[0].icon
 
         const ciudadTitulo = document.createElement('h2')
         ciudadTitulo.textContent = `${ciudadNombre},${paisNombre}`
@@ -88,4 +95,5 @@ L.tileLayer('https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=6PVzPW
         }
 
         marker = L.marker([latitud,longitud]).addTo(map)
+        map.setView([latitud, longitud], 12);
     }
